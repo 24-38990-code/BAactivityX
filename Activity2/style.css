@@ -1,0 +1,252 @@
+/* GENERAL SETTINGS */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #d8e5ff;
+    background-color: #070b18;
+}
+
+
+/* NAVIGATION */
+
+.navbar {
+    background-color: rgba(5, 8, 20, 0.95);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    color: #78aaff !important;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+}
+
+.nav-link {
+    color: #d8e5ff !important;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: #78aaff !important;
+}
+
+
+/* HERO SECTION */
+
+.hero-section {
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 7, 20, 0.92),
+            rgba(8, 15, 40, 0.65),
+            rgba(5, 10, 25, 0.25)
+        ),
+        url("https://twinfinite.net/wp-content/uploads/2024/03/how-to-play-solo-leveling-arise-early-access-1.jpg?fit=1200%2C675");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+    padding: 100px 0 60px;
+}
+
+.hero-content {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.hero-subtitle {
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #82b1ff;
+}
+
+.hero-section h1 {
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: bold;
+    letter-spacing: 8px;
+    line-height: 1;
+    margin-bottom: 25px;
+
+    color: #e5efff;
+
+    text-shadow:
+        0 0 10px rgba(90, 150, 255, 0.8),
+        0 0 30px rgba(60, 120, 255, 0.5);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 550px;
+    margin-bottom: 30px;
+    color: #d4def5;
+}
+
+
+/* BUTTON */
+
+.hero-section .btn {
+    background-color: #315bb5;
+    border-color: #315bb5;
+    padding: 12px 28px;
+    color: white;
+}
+
+.hero-section .btn:hover {
+    background-color: #4b75d1;
+    border-color: #4b75d1;
+}
+
+
+/* FILMS SECTION */
+
+.films-section {
+    background:
+        radial-gradient(
+            circle at top,
+            #172752,
+            #080d1d 70%
+        );
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #82b1ff;
+}
+
+.films-section .text-center p {
+    color: #9baacc;
+}
+
+
+/* CHARACTER CARD */
+
+.film-card {
+    border: 1px solid rgba(100, 150, 255, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+
+    background-color: #0d1428;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(60, 120, 255, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.film-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(70, 130, 255, 0.25);
+}
+
+.film-card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.film-card .card-body {
+    background-color: #0d1428;
+    color: #cbd7ef;
+}
+
+.film-card .card-title {
+    color: #82b1ff;
+    font-weight: bold;
+}
+
+.film-card .card-text {
+    line-height: 1.7;
+    color: #aebbd4;
+}
+
+.film-card .btn {
+    border-color: #527bd3;
+    color: #82b1ff;
+}
+
+.film-card .btn:hover {
+    background-color: #315bb5;
+    border-color: #315bb5;
+    color: white;
+}
+
+
+/* ABOUT SECTION */
+
+.about-section {
+    background-color: #0a1020;
+}
+
+.about-section h2 {
+    color: #82b1ff;
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: #b9c6df;
+    line-height: 1.8;
+}
+
+.about-section img {
+    border: 1px solid rgba(100, 150, 255, 0.3);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #040711;
+    color: #aebbd4;
+    border-top: 1px solid rgba(100, 150, 255, 0.2);
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 85vh;
+        text-align: center;
+        background-position: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-section h1 {
+        font-size: 4rem;
+        letter-spacing: 4px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .about-section {
+        text-align: center;
+    }
+
+}
