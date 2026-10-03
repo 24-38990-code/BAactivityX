@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,98 +9,372 @@
 
 <body>
 
-```
-<main class="container">
+    <main class="container">
 
-    <section class="login-box">
+        <section class="login-box">
 
-        <div class="character">
-            <img src="https://th.bing.com/th/id/OIP.OFKQnap0HetICjVQ0Ld4JQHaJ4?w=164&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Solo Leveling character">
-        </div>
-
-        <header>
-            <p class="system">SYSTEM</p>
-            <h1>CREATE PLAYER</h1>
-            <p>Begin your journey, Hunter.</p>
-        </header>
-
-        <form action="login.html" method="get">
-
-            <div class="input-group">
-                <label for="fullname">FULL NAME</label>
-                <input
-                    type="text"
-                    id="fullname"
-                    name="fullname"
-                    placeholder="Enter your full name"
-                    required
-                >
+            <div class="character">
+                <img src="https://th.bing.com/th/id/OIP.OFKQnap0HetICjVQ0Ld4JQHaJ4?w=164&h=187&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3"
+                     alt="Solo Leveling character">
             </div>
 
-            <div class="input-group">
-                <label for="email">EMAIL</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                >
-            </div>
 
-            <div class="input-group">
-                <label for="username">USERNAME</label>
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="Choose a username"
-                    required
-                >
-            </div>
+            <header>
 
-            <div class="input-group">
-                <label for="password">PASSWORD</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Create a password"
-                    required
-                >
-            </div>
+                <p class="system">SYSTEM</p>
 
-            <div class="input-group">
-                <label for="confirm-password">CONFIRM PASSWORD</label>
-                <input
-                    type="password"
-                    id="confirm-password"
-                    name="confirm-password"
-                    placeholder="Confirm your password"
-                    required
-                >
-            </div>
+                <h1>CREATE PLAYER</h1>
 
-            <label class="terms">
-                <input type="checkbox" name="terms" required>
-                I agree to the Terms and Conditions
-            </label>
+                <p>Begin your journey, Hunter.</p>
 
-            <button type="submit">CREATE PLAYER</button>
+            </header>
 
-        </form>
 
-        <footer>
-            <p>
-                Already a Hunter?
-                <a href="login.html">Return to Login</a>
-            </p>
-        </footer>
+            <form id="registerForm">
 
-    </section>
 
-</main>
-```
+                <!-- FULL NAME -->
+                <div class="input-group">
+
+                    <label for="fullname">FULL NAME</label>
+
+                    <input
+                        type="text"
+                        id="fullname"
+                        name="fullname"
+                        placeholder="Enter your full name"
+                    >
+
+                    <p class="error-message" id="fullnameError"></p>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="input-group">
+
+                    <label for="email">EMAIL</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                    >
+
+                    <p class="error-message" id="emailError"></p>
+
+                </div>
+
+
+                <!-- USERNAME -->
+                <div class="input-group">
+
+                    <label for="username">USERNAME</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Choose a username"
+                    >
+
+                    <p class="error-message" id="usernameError"></p>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="input-group">
+
+                    <label for="password">PASSWORD</label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                    >
+
+                    <p class="error-message" id="passwordError"></p>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+                <div class="input-group">
+
+                    <label for="confirm-password">
+                        CONFIRM PASSWORD
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm-password"
+                        placeholder="Confirm your password"
+                    >
+
+                    <p class="error-message" id="confirmPasswordError"></p>
+
+                </div>
+
+
+                <!-- TERMS -->
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        name="terms"
+                    >
+
+                    I agree to the Terms and Conditions
+
+                </label>
+
+                <p class="error-message" id="termsError"></p>
+
+
+                <!-- REGISTER BUTTON -->
+                <button type="submit">
+                    CREATE PLAYER
+                </button>
+
+
+            </form>
+
+
+            <footer>
+
+                <p>
+                    Already a Hunter?
+                    <a href="login.html">Return to Login</a>
+                </p>
+
+            </footer>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- REGISTER JAVASCRIPT -->
+    <script>
+
+        const registerForm = document.getElementById("registerForm");
+
+        const fullname = document.getElementById("fullname");
+        const email = document.getElementById("email");
+        const username = document.getElementById("username");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+        const terms = document.getElementById("terms");
+
+
+        const fullnameError =
+            document.getElementById("fullnameError");
+
+        const emailError =
+            document.getElementById("emailError");
+
+        const usernameError =
+            document.getElementById("usernameError");
+
+        const passwordError =
+            document.getElementById("passwordError");
+
+        const confirmPasswordError =
+            document.getElementById("confirmPasswordError");
+
+        const termsError =
+            document.getElementById("termsError");
+
+
+        registerForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+
+            // Clear previous errors
+            fullnameError.textContent = "";
+            emailError.textContent = "";
+            usernameError.textContent = "";
+            passwordError.textContent = "";
+            confirmPasswordError.textContent = "";
+            termsError.textContent = "";
+
+            let hasError = false;
+
+
+            /* ==============================
+               CHECK FULL NAME
+            ============================== */
+
+            if (fullname.value.trim() === "") {
+
+                fullnameError.textContent =
+                    "ang full name po ay required :>";
+
+                hasError = true;
+
+            }
+
+
+            /* ==============================
+               CHECK EMAIL
+            ============================== */
+
+            if (email.value.trim() === "") {
+
+                emailError.textContent =
+                    "ang email po ay required :>";
+
+                hasError = true;
+
+            }
+            else {
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email.value.trim())) {
+
+                    emailError.textContent =
+                        "please enter a valid email :>";
+
+                    hasError = true;
+
+                }
+
+            }
+
+
+            /* ==============================
+               CHECK USERNAME
+            ============================== */
+
+            if (username.value.trim() === "") {
+
+                usernameError.textContent =
+                    "ang username po ay required :>";
+
+                hasError = true;
+
+            }
+            else if (username.value.trim().length < 4) {
+
+                usernameError.textContent =
+                    "username must be at least 4 characters :>";
+
+                hasError = true;
+
+            }
+
+
+            /* ==============================
+               CHECK PASSWORD
+            ============================== */
+
+            if (password.value === "") {
+
+                passwordError.textContent =
+                    "ang password po ay required :>";
+
+                hasError = true;
+
+            }
+            else if (password.value.length < 6) {
+
+                passwordError.textContent =
+                    "password must be at least 6 characters :>";
+
+                hasError = true;
+
+            }
+
+
+            /* ==============================
+               CHECK CONFIRM PASSWORD
+            ============================== */
+
+            if (confirmPassword.value === "") {
+
+                confirmPasswordError.textContent =
+                    "please confirm your password :>";
+
+                hasError = true;
+
+            }
+            else if (password.value !== confirmPassword.value) {
+
+                confirmPasswordError.textContent =
+                    "passwords do not match :>";
+
+                hasError = true;
+
+            }
+
+
+            /* ==============================
+               CHECK TERMS
+            ============================== */
+
+            if (!terms.checked) {
+
+                termsError.textContent =
+                    "please agree to the terms and conditions :>";
+
+                hasError = true;
+
+            }
+
+
+            /* ==============================
+               STOP IF THERE IS AN ERROR
+            ============================== */
+
+            if (hasError) {
+                return;
+            }
+
+
+            /* ==============================
+               SAVE ACCOUNT
+            ============================== */
+
+            const account = {
+
+                fullname: fullname.value.trim(),
+
+                email: email.value.trim(),
+
+                username: username.value.trim(),
+
+                password: password.value
+
+            };
+
+
+            localStorage.setItem(
+                "soloLevelingAccount",
+                JSON.stringify(account)
+            );
+
+
+            /* ==============================
+               REGISTRATION SUCCESS
+            ============================== */
+
+            alert("Player successfully created!");
+
+
+            window.location.href = "login.html";
+
+        });
+
+    </script>
 
 </body>
 </html>
